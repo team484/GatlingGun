@@ -17,11 +17,12 @@ public class RobotMap {
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
 	public static final int controlStick = 0;
-	public static final int compressRelay = 0;
-	public static final int turnMotor = 0;
+	public static final int compressRelayA = 1;
+	public static final int compressRelayB = 2;
+	public static final int turnMotor = 5;
 	public static final int encoderA = 0;
 	public static final int encoderB = 1;
-	public static final int valveRelay = 1;
-	public static final int limitSensor = 0;
+	public static final int valveRelay = 0;
+	public static final int limitSensor = 2;
 	
 }

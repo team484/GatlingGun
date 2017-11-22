@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team484.robot.commands.ExampleCommand;
 import org.usfirst.frc.team484.robot.commands.PIDRotate;
 import org.usfirst.frc.team484.robot.commands.RotateDoNothing;
+import org.usfirst.frc.team484.robot.commands.RotateFullSpeed;
 import org.usfirst.frc.team484.robot.commands.ValveDoNothing;
 import org.usfirst.frc.team484.robot.commands.ValveShoot;
 

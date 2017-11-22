@@ -23,11 +23,13 @@ import org.usfirst.frc.team484.robot.subsystems.Valve;
  */
 public class Robot extends IterativeRobot {
 
+	public static int setpoint = 0;
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static RobotIO io = new RobotIO();
 	public static OI oi;
 	public static Rotator rotator = new Rotator();
 	public static Valve valve = new Valve();
+	
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -41,11 +43,7 @@ public class Robot extends IterativeRobot {
 	public void robotPeriodic() {
 		// TODO Auto-generated method stub
 		super.robotPeriodic();
-		if(io.compSensor.get()) {
-			io.compressor.set(Relay.Value.kOff);
-		}else {
-			io.compressor.set(Relay.Value.kOn);
-		}
+		
 	}
 	
 	@Override
@@ -54,7 +52,7 @@ public class Robot extends IterativeRobot {
 		chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
-		Robot.io.encoder.setDistancePerPulse(18.0);
+		Robot.io.encoder.setDistancePerPulse(360.0/(20.0*108.0));
 	}
 
 	/**
@@ -123,6 +121,16 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		if(io.compSensor.get()) {
+			io.compressorA.set(Relay.Value.kOff);
+			io.compressorB.set(Relay.Value.kOff);
+
+			
+		}else {
+			io.compressorA.set(Relay.Value.kOn);
+			io.compressorB.set(Relay.Value.kOn);
+
+		}
 	}
 
 	/**

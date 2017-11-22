@@ -9,7 +9,8 @@ import edu.wpi.first.wpilibj.Talon;
 public class RobotIO {
 	
 	public Relay valve;
-	public Relay compressor;
+	public Relay compressorA;
+	public Relay compressorB;
 	public Talon turnMotor;
 	public Joystick controlStick;
 	public Encoder encoder;
@@ -17,7 +18,8 @@ public class RobotIO {
 
 	public RobotIO() {
 		valve = new Relay(RobotMap.valveRelay);
-		compressor = new Relay(RobotMap.compressRelay);
+		compressorA = new Relay(RobotMap.compressRelayA);
+		compressorB = new Relay(RobotMap.compressRelayB);
 		turnMotor = new Talon(RobotMap.turnMotor);
 		controlStick = new Joystick(RobotMap.controlStick);
 		encoder = new Encoder(RobotMap.encoderA, RobotMap.encoderB);
